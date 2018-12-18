@@ -52,6 +52,9 @@
               _change();
                new Timer(_duration,(){
                 _change();
+                 new Timer(_duration,(){
+                _change();
+                });
               });
             });
           });
