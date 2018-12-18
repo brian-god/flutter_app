@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_app/widget/MyBottomNagitionItim.dart';
+import 'package:flutter_app/page/homepage.dart';
+import 'package:flutter_app/page/Mypage.dart';
+import 'package:flutter_app/page/messagepage.dart';
+import 'package:flutter_app/page/videopage.dart';
 import 'dart:ui';
  class MyHome extends StatelessWidget{
     @override
@@ -8,6 +12,9 @@ import 'dart:ui';
         // TODO: implement build
         return new MaterialApp(
           home: new _HoneNavigation(),
+          /*routes: <String, WidgetBuilder>{
+         '/home': (BuildContext context) => new HomePage()
+          },*/
         );
     }
  }
@@ -18,25 +25,40 @@ import 'dart:ui';
  }
  //导航实现
  class HoneNavigationState extends State<_HoneNavigation>{
-    //导航栏是否被选中
-    var _isselect = "";
+    //导航栏的哪一项被选中
+    var _isselect = "home";
+    PageController pageController;
+    int page = 0;
    @override
      void initState() {
        // TODO: implement initState
-       super.initState();
-
+      super.initState();
+      //初始化页面控制类
+      pageController = new PageController(initialPage: this.page);
      }
    @override
      Widget build(BuildContext context) {
        // TODO: implement build
        return  new Scaffold(
+         body: PageView(
+           children: <Widget>[
+             HomePage(),
+             VideoPage(),
+             MessagePage(),
+             MyPage(),
+           ],
+           //页面控制器
+           controller: pageController,
+           //改变页面的方法
+           onPageChanged:onPageChanged, 
+         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             /*Navigator.of(context)
                 .push(MaterialPageRoute(builder: (BuildContext context) {
             }));*/
             setState(() { 
-                      _isselect = "";     
+                      //_isselect = "home";     
                   });
           },
           mini: false,
@@ -75,8 +97,12 @@ import 'dart:ui';
                 tcolor: _isselect=="home"?Colors.blue:Colors.black54,
                 onTap: (){
                   setState(() { 
-                      _isselect = "home";     
+                      _isselect = "home";
+                      page = 0;
+                      //跳到头条页面
+                     // Navigator.of(context).pushReplacementNamed("/home");     
                   });
+                  chengepage();
                 },
               ),
               height: 50,
@@ -94,7 +120,9 @@ import 'dart:ui';
                  onTap: (){
                   setState(() { 
                       _isselect = "video";     
+                      page = 1;
                   });
+                  chengepage();
                 },
               ),
               height: 50,
@@ -120,8 +148,10 @@ import 'dart:ui';
                 text: "消息",
                 onTap: (){
                   setState(() { 
-                      _isselect = "message";     
+                      _isselect = "message";
+                      page = 2;  
                   });
+                  chengepage();
                 },
                 tcolor: _isselect=="message"?Colors.blue:Colors.black54,
               ),
@@ -142,8 +172,10 @@ import 'dart:ui';
                 tcolor: _isselect=="my"?Colors.blue:Colors.black54,
                  onTap: (){
                   setState(() { 
-                      _isselect = "my";     
+                      _isselect = "my"; 
+                      page = 3;  
                   });
+                  chengepage();
                 },
               ),
               height: 50,
@@ -153,5 +185,19 @@ import 'dart:ui';
           ),
         ],
       );
+    }
+    //改变也面的方法
+    void chengepage(){
+      pageController.animateToPage(
+      page, duration: const Duration(milliseconds: 300),
+      curve: Curves.ease);
+    }
+    /** 
+     * 改变页面的方法
+     */
+    void onPageChanged(int page) {
+      setState(() {
+      this.page = page;
+      });
     }
  }

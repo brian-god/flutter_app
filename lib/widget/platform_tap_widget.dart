@@ -14,7 +14,7 @@ class PlatformTapWidget extends StatefulWidget {
     this.radius = 0.0,
     this.onTap,
     this.elevation,
-    this.backgroundColor = Colors.white,
+    this.backgroundColor = Colors.white54,
     this.splashColor,
     this.onLongTap,
     this.child,
