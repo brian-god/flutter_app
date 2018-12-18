@@ -5,7 +5,6 @@ import 'package:flutter_app/page/homepage.dart';
 import 'package:flutter_app/page/Mypage.dart';
 import 'package:flutter_app/page/messagepage.dart';
 import 'package:flutter_app/page/videopage.dart';
-import 'dart:ui';
  class MyHome extends StatelessWidget{
     @override
       Widget build(BuildContext context) {
@@ -94,7 +93,7 @@ import 'dart:ui';
                 key: Key("home"),
                 image: _isselect=="home"?"statics/icons/home1.png":"statics/icons/home.png",
                 text: "首页",
-                tcolor: _isselect=="home"?Colors.blue:Colors.black54,
+                tcolor: _isselect=="home"?Colors.red:Colors.black54,
                 onTap: (){
                   setState(() { 
                       _isselect = "home";
@@ -116,7 +115,7 @@ import 'dart:ui';
                 key: Key("video"),
                 image: _isselect=="video"?"statics/icons/video1.png":"statics/icons/video.png",
                 text: "视频",
-                tcolor:_isselect=="video"?Colors.blue:Colors.black54,
+                tcolor:_isselect=="video"?Colors.red:Colors.black54,
                  onTap: (){
                   setState(() { 
                       _isselect = "video";     
@@ -153,7 +152,7 @@ import 'dart:ui';
                   });
                   chengepage();
                 },
-                tcolor: _isselect=="message"?Colors.blue:Colors.black54,
+                tcolor: _isselect=="message"?Colors.red:Colors.black54,
               ),
               height: 50,
               decoration: BoxDecoration(
@@ -169,7 +168,7 @@ import 'dart:ui';
                 key: Key("my"),
                 image: _isselect=="my"?"statics/icons/my1.png":"statics/icons/my.png",
                 text: "我的",
-                tcolor: _isselect=="my"?Colors.blue:Colors.black54,
+                tcolor: _isselect=="my"?Colors.red:Colors.black54,
                  onTap: (){
                   setState(() { 
                       _isselect = "my"; 

@@ -27,6 +27,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  json_annotation: ^0.2.3
 
 
 # For information on the generic Dart part of this file, see the
