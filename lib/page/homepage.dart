@@ -49,7 +49,7 @@ class TabNavigationState extends State<TabNavigation>
                   indicatorPadding: EdgeInsets.fromLTRB(0, 0, 0, 0),
                 ),
           ),
-          preferredSize:Size.fromHeight(50.0),
+          preferredSize:Size.fromHeight(48.0),
         ),
         body: new TabBarView(controller: _tabController, children: <Widget>[
           new TopItme(),
