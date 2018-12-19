@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/page/homeItme/topItme.dart';
+import 'package:flutter_app/page/homeItme/newsItem.dart';
 class HomePage extends StatelessWidget {
 
 
@@ -52,19 +52,11 @@ class TabNavigationState extends State<TabNavigation>
           preferredSize:Size.fromHeight(48.0),
         ),
         body: new TabBarView(controller: _tabController, children: <Widget>[
-          new TopItme(),
-          new Center(
-            child: Text("社会"),
-          ),
-          new Center(
-            child: Text("国内"),
-          ),
-          new Center(
-            child: Text("娱乐"),
-          ),
-          new Center(
-            child: Text("体育"),
-          ),
+          new NewsiItme(type: 'top',),
+          new NewsiItme(type: 'shehui',),
+          new NewsiItme(type: 'guonei',),
+          new NewsiItme(type: 'yule',),
+          new NewsiItme(type: 'tiyu',),
           new Center(),
         ]));
   }
