@@ -5,13 +5,20 @@ class IconTextButton extends StatelessWidget {
   final String text;
   final Function onTap;
   final Color tcolor;
-
+  final double iconWidth;
+  final double iconHeight;
+  final double fontSize;
+  final EdgeInsetsGeometry iconMarage;
   const IconTextButton({
     Key key,
     this.image,
     this.text,
     this.onTap,
-    this.tcolor
+    this.tcolor,
+    this.iconWidth,
+    this.iconHeight,
+    this.fontSize,
+    this.iconMarage,
   }) : super(key: key);
 
   @override
@@ -20,10 +27,11 @@ class IconTextButton extends StatelessWidget {
       onTap: onTap,
       child: Column(
         children: <Widget>[
-          Container(
-            child:Image.asset(image,height: 25,width: 25,),
+          Container(//25-25-15
+            child:Image.asset(image,height: iconHeight,width:iconWidth,),
+            margin: iconMarage,
           ),
-          Text(text,style: TextStyle(fontSize: 15,color: tcolor),),
+          Text(text,style: TextStyle(fontSize: fontSize,color: tcolor),),
         ],
       ),
       //backgroundColor: Colors.blue,

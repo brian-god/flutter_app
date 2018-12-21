@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_app/widget/MyBottomNagitionItim.dart';
+import 'package:flutter_app/widget/IconTextButton.dart';
 import 'package:flutter_app/page/homepage.dart';
 import 'package:flutter_app/page/Mypage.dart';
 import 'package:flutter_app/page/messagepage.dart';
@@ -103,6 +103,10 @@ import 'package:flutter_app/page/videopage.dart';
                   });
                   chengepage();
                 },
+                fontSize: 15,
+                iconHeight: 25,
+                iconWidth: 25,
+                iconMarage: EdgeInsets.all(0),
               ),
               height: 50,
               padding: EdgeInsets.fromLTRB(0, 3, 0, 0),
@@ -123,6 +127,10 @@ import 'package:flutter_app/page/videopage.dart';
                   });
                   chengepage();
                 },
+                fontSize: 15,
+                iconHeight: 25,
+                iconWidth: 25,
+                iconMarage: EdgeInsets.all(0),
               ),
               height: 50,
               margin: EdgeInsets.all(0),
@@ -152,6 +160,10 @@ import 'package:flutter_app/page/videopage.dart';
                   });
                   chengepage();
                 },
+                fontSize: 15,
+                iconHeight: 25,
+                iconWidth: 25,
+                iconMarage: EdgeInsets.all(0),
                 tcolor: _isselect=="message"?Colors.red:Colors.black54,
               ),
               height: 50,
@@ -176,6 +188,10 @@ import 'package:flutter_app/page/videopage.dart';
                   });
                   chengepage();
                 },
+                fontSize: 15,
+                iconHeight: 25,
+                iconWidth: 25,
+                iconMarage: EdgeInsets.all(0),
               ),
               height: 50,
               padding: EdgeInsets.fromLTRB(0, 3, 0, 0),

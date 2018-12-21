@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/page/mypage/indexpage.dart';
 class MyPage extends StatelessWidget {
 
 
@@ -8,8 +9,7 @@ class MyPage extends StatelessWidget {
 
   return new Scaffold(
    body: new Center(
-    child:
-    new Text("我的"),
+    child: IndexPage()
    ),
   );
  }

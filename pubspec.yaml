@@ -53,6 +53,10 @@ flutter:
       - statics/icons/my1.png
       - statics/icons/video.png
       - statics/icons/video1.png
+      - statics/icons/jili.png
+      - statics/icons/zan.png
+      - statics/icons/pinglu.png
+      - statics/icons/shouchang.png
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg
 

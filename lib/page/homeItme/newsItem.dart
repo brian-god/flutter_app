@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'dart:io';
 import 'dart:convert';
 import 'package:flutter_app/ben/newsben.dart';
+import 'package:flutter_app/widget/MyCard.dart';
+import 'package:flutter_app/page/homeItme/newsDetails.dart';
 //
 /**
  * 头条页面
@@ -27,12 +29,13 @@ class NewsiItmeState extends State<NewsiItme>{
     super.initState();
     _get();
   }
-  List<Card> chlids;
+  List<MyCard> chlids;
+  var errorpage;
   @override
     Widget build(BuildContext context) {
       // TODO: implement build
       return Center(
-        child: Container(
+        child: errorpage!=null?errorpage:Container(
           child: ListView(
             padding: EdgeInsets.all(50),
             children:chlids==null?[
@@ -59,29 +62,35 @@ class NewsiItmeState extends State<NewsiItme>{
            Map  newtree = json.decode(responseBody);
            newsdetas  newdata = new newsdetas.fromJson(newtree['result']);
            //创建存储数据的集合
-           List<Card> chlids1 = new List();
+           List<MyCard> chlids1 = new List();
            //遍历集合创建卡片
            for (newsitem item in newdata.data) {
-              chlids1.add(Card(
-                child: Column(
-                  children: <Widget>[
-                    Text(item.title,style: TextStyle(fontSize: 15),),
-                    Center(
-                      child: Image.network(item.thumbnail_pic_s,fit: BoxFit.cover,),
-                      //heightFactor: 100,
-                    ),
-                    //Image.network(item.thumbnail_pic_s02),
-                    //Image.network(item.thumbnail_pic_s03),
-                  ],
-                ),
+              chlids1.add(MyCard(
+                title: item.title,
+                thumbnail_pic_s: item.thumbnail_pic_s,
+                onTap:(){
+                  //跳转到新的 页面我们需要调用 navigator.push方法 这个和eactNative的方式相同
+                  Navigator.push(context, 
+                      MaterialPageRoute(
+                        builder: (context) => NewsDetails(
+                        title: item.title,
+                        url: item.url,
+                      )
+                    ));
+                },
               ));
            }
            setState(() {
               chlids = chlids1;
+              errorpage =null;
             });
             //print(newtree.toString());
-         }else{
-           print("error");
+         }else if(response.statusCode == 112){
+           setState(() {
+                        errorpage=Center(
+                          child: Text("超过了当日请求的最大次数！！",style: TextStyle(fontSize: 30),),
+                        );
+                      });
          }    
        }
 }
