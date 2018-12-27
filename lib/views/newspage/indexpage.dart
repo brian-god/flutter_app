@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/page/homeItme/newsItem.dart';
+import 'package:flutter_app/views/newspage/newsItme/newsItem.dart';
 class HomePage extends StatelessWidget {
 
 
@@ -27,10 +27,10 @@ class TabNavigationState extends State<TabNavigation>
   final mytabs = [
     //头条，社会，国内，娱乐，体育，军事，科技，财经，时尚
      new Tab(text: "头条",),
-     new Tab(text: "社会",),
      new Tab(text: "国内",),
-     new Tab(text: "娱乐",),
-     new Tab(text: "体育",),
+     new Tab(text: "国际",),
+     new Tab(text: "军事",),
+     new Tab(text: "财经",),
      new Tab(text: "...",),
   ];
   @override
@@ -52,11 +52,16 @@ class TabNavigationState extends State<TabNavigation>
           preferredSize:Size.fromHeight(48.0),
         ),
         body: new TabBarView(controller: _tabController, children: <Widget>[
-          new NewsiItme(type: 'top',),
-          new NewsiItme(type: 'shehui',),
+          //new NewsiItme(type: 'top',),
+          //new NewsiItme(type: 'shehui',),
+          //new NewsiItme(type: 'guonei',),
+          //new NewsiItme(type: 'yule',),
+         // new NewsiItme(type: 'tiyu',),
+          new NewsiItme(type: 'yaowen',),
           new NewsiItme(type: 'guonei',),
-          new NewsiItme(type: 'yule',),
-          new NewsiItme(type: 'tiyu',),
+          new NewsiItme(type: 'guoji',),
+          new NewsiItme(type: 'war',),
+          new NewsiItme(type: 'money',),
           new Center(),
         ]));
   }

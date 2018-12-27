@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/widget/platform_tap_widget.dart';
+//import 'package:flutter_app/widget/platform_tap_widget.dart';
 class IconTextButton extends StatelessWidget {
   final String image;
   final String text;
@@ -23,7 +23,7 @@ class IconTextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PlatformTapWidget(
+    return GestureDetector(
       onTap: onTap,
       child: Column(
         children: <Widget>[

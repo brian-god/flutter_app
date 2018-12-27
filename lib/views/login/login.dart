@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_app/home/home.dart';
+import './../../common/home.dart';
  class MyLoginPage extends StatelessWidget{
     @override
       Widget build(BuildContext context) {
@@ -105,12 +105,12 @@ import 'package:flutter_app/home/home.dart';
                                   padding: EdgeInsets.fromLTRB(93, 10, 93, 10),
                                   onPressed: _loginEvent,
                                 ),
-                                margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
+                                margin: EdgeInsets.fromLTRB(0, 4, 0, 0),
                               ),
                             ],                           
                   ),
                   width: 280,
-                  height: 400,
+                  height: 380,
                   //设置内容居中
                   alignment: Alignment.center,
                   //相当于容器修饰器

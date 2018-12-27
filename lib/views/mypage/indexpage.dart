@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-class MessagePage extends StatelessWidget {
+import './mypageItem/indexpage.dart';
+class MyPage extends StatelessWidget {
 
 
  @override
@@ -8,8 +9,7 @@ class MessagePage extends StatelessWidget {
 
   return new Scaffold(
    body: new Center(
-    child:
-    new Text("消息"),
+    child: IndexPage()
    ),
   );
  }

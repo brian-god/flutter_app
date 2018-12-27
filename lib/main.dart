@@ -1,7 +1,7 @@
  import 'dart:async';
  import 'package:flutter/material.dart';
  import 'package:flutter/services.dart';
- import 'package:flutter_app/page/login.dart';
+ import './views/login/login.dart';
  import 'dart:ui';
  void main() => runApp(new MyApp());
 

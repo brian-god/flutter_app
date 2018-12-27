@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_app/widget/IconTextButton.dart';
-import 'package:flutter_app/page/homepage.dart';
-import 'package:flutter_app/page/Mypage.dart';
-import 'package:flutter_app/page/messagepage.dart';
-import 'package:flutter_app/page/videopage.dart';
+import 'package:flutter_app/widgets/IconTextButton.dart';
+import './../views/messagepage/indexpage.dart';
+import './../views/mypage/indexpage.dart';
+import './../views/newspage/indexpage.dart';
+import './../views/videopage/indexpage.dart';
  class MyHome extends StatelessWidget{
     @override
       Widget build(BuildContext context) {
