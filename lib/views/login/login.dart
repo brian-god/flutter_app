@@ -64,7 +64,7 @@ import './../../common/home.dart';
                                     fontSize: 14,
                                   )
                                 ),
-                                keyboardType: TextInputType.text,
+                                keyboardType: TextInputType.emailAddress,
                                 controller: usercontroller,
                                 onChanged: _clertext,
                               ),

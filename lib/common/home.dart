@@ -5,6 +5,7 @@ import './../views/messagepage/indexpage.dart';
 import './../views/mypage/indexpage.dart';
 import './../views/newspage/indexpage.dart';
 import './../views/videopage/indexpage.dart';
+import './../views/weChat/indexpage.dart';
  class MyHome extends StatelessWidget{
     @override
       Widget build(BuildContext context) {
@@ -53,12 +54,11 @@ import './../views/videopage/indexpage.dart';
          ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            /*Navigator.of(context)
-                .push(MaterialPageRoute(builder: (BuildContext context) {
-            }));*/
-            setState(() { 
-                      //_isselect = "home";     
-                  });
+            //页面跳转
+            Navigator.push(context, MaterialPageRoute(
+              //目标页面
+              builder: (context) =>WeChatHomePage()
+            ));
           },
           mini: false,
           child:  Container(
